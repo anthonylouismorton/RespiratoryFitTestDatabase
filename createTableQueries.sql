@@ -98,3 +98,9 @@ foreign key(respiratorID) references Respirator(respiratorID)
 alter table QualitativeRespiratorFitTest
 add respiratorID int
 foreign key(respiratorID) references Respirator(respiratorID)
+
+create table RespiratorStyle(
+respiratorStyleID int IDENTITY(500,1) PRIMARY KEY,
+respiratorStyleName nvarchar(255),
+respiratorStyleFitFactor nvarchar(255)
+)
