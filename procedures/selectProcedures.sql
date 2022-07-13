@@ -55,3 +55,8 @@ SELECT * FROM [dbo].[Employee]
 CREATE PROCEDURE SelectAllCompanies
 AS
 SELECT * FROM [dbo].[Company]
+
+create procedure SelectRespiratorList
+AS
+SELECT DISTINCT respiratorManufacturer from dbo.Respirator
+GO
