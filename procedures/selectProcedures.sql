@@ -5,7 +5,6 @@ FROM Respirator
 INNER JOIN RespiratorStyle ON RespiratorStyle.respiratorStyleID = Respirator.respiratorStyleID
 
 CREATE PROCEDURE SelectRespirator @respiratorID int
-
 AS
 BEGIN
 SELECT Respirator.respiratorID, Respirator.respiratorManufacturer, Respirator.respiratorModelNumber, Respirator.respiratorStyleID, RespiratorStyle.respiratorStyleName, RespiratorStyle.respiratorStyleFitFactor
@@ -50,7 +49,8 @@ WHERE companyID = @companyID
 
 CREATE PROCEDURE SelectAllEmployees
 AS
-SELECT * FROM [dbo].[Employee]
+SELECT Employee.*, Company.companyName from [dbo].[Employee]
+left Join Company ON Company.companyID=Employee.companyID
 
 CREATE PROCEDURE SelectAllCompanies
 AS
