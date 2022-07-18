@@ -14,6 +14,10 @@ Initial creation and upload of the Respiratory Fit Test Database.
 
 This folder contains the stored procedures scripts used to create stored procedures on the Microsoft Azure Respiratory Fit Test Database. These procedures are used in connection with an Express server to perform crud operations between the database and server.
 
+### Updated SelectAllEmployees Procedure 7/17/2022
+
+Updated SelectAllEmployees procedure to select Company name. This was needed on the front end to simplify updating an employee's company.
+
 ## Remarks
 
 ### 7/10/2022
