@@ -18,6 +18,10 @@ This folder contains the stored procedures scripts used to create stored procedu
 
 Updated SelectAllEmployees procedure to select Company name. This was needed on the front end to simplify updating an employee's company.
 
+### Updated SelectEmployeeBySSN Procedure 7/18/2022
+
+Created procedure SelectEmployeeBySSN. Not getting employee by SSN. Substituted getting employee by ID and the procedure worked. Possible issue by getting employee using an nvarchar instead of an int or possible issue with ssn not being a unique type in the database.
+
 ## Remarks
 
 ### 7/10/2022

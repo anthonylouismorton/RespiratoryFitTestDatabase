@@ -60,3 +60,8 @@ create procedure SelectRespiratorList
 AS
 SELECT DISTINCT respiratorManufacturer from dbo.Respirator
 GO
+
+CREATE PROCEDURE SelectEmployeeBySSN @ssn NVARCHAR
+AS
+SELECT * FROM [dbo].[Employee]
+WHERE ssn = @ssn
