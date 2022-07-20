@@ -22,6 +22,10 @@ Updated SelectAllEmployees procedure to select Company name. This was needed on 
 
 Created procedure SelectEmployeeBySSN. Not getting employee by SSN. Substituted getting employee by ID and the procedure worked. Possible issue by getting employee using an nvarchar instead of an int or possible issue with ssn not being a unique type in the database.
 
+### Updated SelectEmployeeBySSN Procedure and Employee Table 7/18/2022
+
+Procedure SelecteEmployeeBySSN was updated so that ssn is of int datatype instead of nvarchar. Also updated employee table so that ssn is of int datatype.
+
 ## Remarks
 
 ### 7/10/2022
