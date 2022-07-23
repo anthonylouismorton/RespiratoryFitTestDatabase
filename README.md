@@ -24,7 +24,11 @@ Created procedure SelectEmployeeBySSN. Not getting employee by SSN. Substituted 
 
 ### Updated SelectEmployeeBySSN Procedure and Employee Table 7/18/2022
 
-Procedure SelecteEmployeeBySSN was updated so that ssn is of int datatype instead of nvarchar. Also updated employee table so that ssn is of int datatype.
+Procedure SelectEmployeeBySSN was updated so that ssn is of int datatype instead of nvarchar. Also updated employee table so that ssn is of int datatype.
+
+### Create Procedure SelectRespiratorModels 7/22/2022
+
+Procedure SelectRespiratorModels was created and accepts a parameter of respirator manufacturer. This is used so that a user on the front end so that when they pick a manufacturer they are given all models already in the database by that manufacturer.
 
 ## Remarks
 
