@@ -61,7 +61,13 @@ AS
 SELECT DISTINCT respiratorManufacturer from dbo.Respirator
 GO
 
-CREATE PROCEDURE SelectEmployeeBySSN @ssn NVARCHAR
+CREATE PROCEDURE SelectEmployeeBySSN @ssn Int
 AS
 SELECT * FROM [dbo].[Employee]
 WHERE ssn = @ssn
+
+create procedure SelectRespiratorModels @respiratorManufacturer nvarchar(255)
+AS
+SELECT * From [dbo].[Respirator]
+Where respiratorManufacturer = @respiratorManufacturer
+GO;
