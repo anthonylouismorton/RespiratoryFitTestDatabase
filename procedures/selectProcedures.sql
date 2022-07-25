@@ -24,13 +24,17 @@ SELECT * FROM [dbo].[QualitativeRespiratorFitTest]
 
 CREATE PROCEDURE SelectEmployeeQuantitativeFitTests @employeeID int
 AS
-SELECT * FROM [dbo].[QuantitativeRespiratorFitTest]
-WHERE employeeID = @employeeID
+SELECT QuantitativeRespiratorFitTest.*, Respirator.respiratorManufacturer, Respirator.respiratorModelNumber
+FROM [dbo].[QuantitativeRespiratorFitTest]
+LEFT JOIN Respirator
+ON respirator.respiratorID=QuantitativeRespiratorFitTest.respiratorID
 
 CREATE PROCEDURE SelectEmployeeQualitativeFitTests @employeeID int
 AS
-SELECT * FROM [dbo].[QualitativeRespiratorFitTest]
-WHERE employeeID = @employeeID
+SELECT QualitativeRespiratorFitTest.*, Respirator.respiratorManufacturer, Respirator.respiratorModelNumber
+FROM [dbo].[QualitativeRespiratorFitTest]
+LEFT JOIN Respirator
+ON respirator.respiratorID=QualitativeRespiratorFitTest.respiratorID
 
 CREATE PROCEDURE SelectEmployee @employeeID int
 AS
