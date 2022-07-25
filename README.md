@@ -30,6 +30,10 @@ Procedure SelectEmployeeBySSN was updated so that ssn is of int datatype instead
 
 Procedure SelectRespiratorModels was created and accepts a parameter of respirator manufacturer. This is used so that a user on the front end so that when they pick a manufacturer they are given all models already in the database by that manufacturer.
 
+### Update SelectQuantitativeFitTests and SelectEmployeeQualitativeFitTests Procedure 7/24/2022
+
+Procedure SelectQuantitativeFitTests and SelectEmployeeQualitativeFitTests each left join with the respirator table to get the respirator manufacturer and model number.
+
 ## Remarks
 
 ### 7/10/2022
