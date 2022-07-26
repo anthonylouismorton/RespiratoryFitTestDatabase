@@ -56,8 +56,6 @@ add qualitativeTestDate DATE,
 	qualitativeTestTime TIME,
 	qualitativeTestExpiration DATE
 
-
-
 create table differentRespiratorSizes(
 	respiratorID int,
 	respiratorsizeID int,
