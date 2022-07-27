@@ -28,17 +28,18 @@ CREATE PROCEDURE UpdateQuantitativeFitTest
 @quantitativeTestDate DATE,
 @quantitativeTestTime nvarchar(10),
 @quantitativeTestExpiration DATE,
-@quantitativeTest1FitFactor nvarchar(255),
-@quantitativeTest2FitFactor nvarchar(255),
-@quantitativeTest3FitFactor nvarchar(255),
-@quantitativeTest4FitFactor nvarchar(255),
-@quantitativeTest5FitFactor nvarchar(255),
-@quantitativeTest6FitFactor nvarchar(255),
-@quantitativeTest7FitFactor nvarchar(255),
-@quantitativeTest8FitFactor nvarchar(255),
-@quantitativeOverallFitFactor nvarchar(255),
+@quantitativeTest1FitFactor int,
+@quantitativeTest2FitFactor int,
+@quantitativeTest3FitFactor int,
+@quantitativeTest4FitFactor int,
+@quantitativeTest5FitFactor int,
+@quantitativeTest6FitFactor int,
+@quantitativeTest7FitFactor int,
+@quantitativeTest8FitFactor int,
+@quantitativeOverallFitFactor int,
 @employeeID int,
-@respiratorID int
+@respiratorID int,
+@respiratorSize nvarchar(255)
 AS
 BEGIN
 SET NOCOUNT ON
@@ -60,7 +61,8 @@ SET
 [quantitativeTest8FitFactor] = isNull(@quantitativeTest8FitFactor, quantitativeTest8FitFactor),
 [quantitativeOverallFitFactor] = isNull(@quantitativeOverallFitFactor, quantitativeOverallFitFactor),
 [employeeID] = isNull(@employeeID, employeeID),
-[respiratorID] = isNull(@respiratorID, respiratorID)
+[respiratorID] = isNull(@respiratorID, respiratorID),
+[respiratorSize] = isNull(@respiratorSize, respiratorSize)
 WHERE quantitativeTestID = @quantitativeTestID
 SELECT * FROM [dbo].[QuantitativeRespiratorFitTest] WHERE quantitativeTestID = @quantitativeTestID;
 END
@@ -74,7 +76,8 @@ CREATE PROCEDURE UpdateQualitativeFitTest
 @qualitativeTestTime nvarchar(10),
 @qualitativeTestExpiration date,
 @employeeID int,
-@respiratorID int
+@respiratorID int,
+@respiratorSize nvarchar(255)
 
 AS
 BEGIN
@@ -89,7 +92,8 @@ SET
 [qualitativeTestTime] = isNull(@qualitativeTestTime, qualitativeTestTime),
 [qualitativeTestExpiration] = isNull(@qualitativeTestExpiration, qualitativeTestExpiration),
 [employeeID] = isNull(@employeeID, employeeID), 
-[respiratorID] = isNull(@respiratorID, [respiratorID])
+[respiratorID] = isNull(@respiratorID, [respiratorID]),
+[respiratorSize] = isNull(@respiratorSize, [respiratorSize])
 WHERE qualitativeTestID = @qualitativeTestID
 SELECT * FROM [dbo].[QualitativeRespiratorFitTest] WHERE qualitativeTestID = @qualitativeTestID;
 END

@@ -14,20 +14,21 @@ CREATE PROCEDURE AddQuantitativeFitTest
 @quantitativeTestDate DATE,
 @quantitativeTestTime nvarchar(10),
 @quantitativeTestExpiration DATE,
-@quantitativeTest1FitFactor nvarchar(255),
-@quantitativeTest2FitFactor nvarchar(255),
-@quantitativeTest3FitFactor nvarchar(255),
-@quantitativeTest4FitFactor nvarchar(255),
-@quantitativeTest5FitFactor nvarchar(255),
-@quantitativeTest6FitFactor nvarchar(255),
-@quantitativeTest7FitFactor nvarchar(255),
-@quantitativeTest8FitFactor nvarchar(255),
-@quantitativeOverallFitFactor nvarchar(255),
+@quantitativeTest1FitFactor int,
+@quantitativeTest2FitFactor int,
+@quantitativeTest3FitFactor int,
+@quantitativeTest4FitFactor int,
+@quantitativeTest5FitFactor int,
+@quantitativeTest6FitFactor int,
+@quantitativeTest7FitFactor int,
+@quantitativeTest8FitFactor int,
+@quantitativeOverallFitFactor int,
 @employeeID int,
-@respiratorID int
+@respiratorID int,
+@respiratorSize nvarchar(255)
 AS
-INSERT INTO [dbo].[QuantitativeRespiratorFitTest]([maskType], [quantitativeOverallTestPass], [quantitativeTestDate], [quantitativeTestTime], [quantitativeTestExpiration], [quantitativeTest1FitFactor], [quantitativeTest2FitFactor],  [quantitativeTest3FitFactor],  [quantitativeTest4FitFactor], [quantitativeTest5FitFactor], [quantitativeTest6FitFactor], [quantitativeTest7FitFactor],  [quantitativeTest8FitFactor],  [quantitativeOverallFitFactor], [employeeID], [respiratorID])
-values(@maskType, @quantitativeOverallTestPass, @quantitativeTestDate, @quantitativeTestTime, @quantitativeTestExpiration, @quantitativeTest1FitFactor, @quantitativeTest2FitFactor, @quantitativeTest3FitFactor, @quantitativeTest4FitFactor, @quantitativeTest5FitFactor, @quantitativeTest6FitFactor, @quantitativeTest7FitFactor, @quantitativeTest8FitFactor, @quantitativeOverallFitFactor, @employeeID, @respiratorID)
+INSERT INTO [dbo].[QuantitativeRespiratorFitTest]([maskType], [quantitativeOverallTestPass], [quantitativeTestDate], [quantitativeTestTime], [quantitativeTestExpiration], [quantitativeTest1FitFactor], [quantitativeTest2FitFactor],  [quantitativeTest3FitFactor],  [quantitativeTest4FitFactor], [quantitativeTest5FitFactor], [quantitativeTest6FitFactor], [quantitativeTest7FitFactor],  [quantitativeTest8FitFactor],  [quantitativeOverallFitFactor], [employeeID], [respiratorID], [respiratorSize])
+values(@maskType, @quantitativeOverallTestPass, @quantitativeTestDate, @quantitativeTestTime, @quantitativeTestExpiration, @quantitativeTest1FitFactor, @quantitativeTest2FitFactor, @quantitativeTest3FitFactor, @quantitativeTest4FitFactor, @quantitativeTest5FitFactor, @quantitativeTest6FitFactor, @quantitativeTest7FitFactor, @quantitativeTest8FitFactor, @quantitativeOverallFitFactor, @employeeID, @respiratorID, @respiratorSize)
 SELECT * FROM [dbo].[QuantitativeRespiratorFitTest] WHERE quantitativeTestID = SCOPE_IDENTITY();
 
 CREATE PROCEDURE AddQualitativeFitTest
@@ -38,10 +39,11 @@ CREATE PROCEDURE AddQualitativeFitTest
 @qualitativeTestTime nvarchar(10),
 @qualitativeTestExpiration DATE,
 @employeeID int,
-@respiratorID int
+@respiratorID int,
+@respiratorSize nvarchar(255)
 AS
-INSERT INTO [dbo].[QualitativeRespiratorFitTest]([qualitativeTestType], [qualitativeTasteThreshold], [qualitativeTestPass], [qualitativeTestDate], [qualitativeTestTime], [qualitativeTestExpiration], [employeeID], [respiratorID])
-values(@qualitativeTestType, @qualitativeTasteThreshold, @qualitativeTestPass, @qualitativeTestDate, @qualitativeTestTime, @qualitativeTestExpiration, @employeeID, @respiratorID)
+INSERT INTO [dbo].[QualitativeRespiratorFitTest]([qualitativeTestType], [qualitativeTasteThreshold], [qualitativeTestPass], [qualitativeTestDate], [qualitativeTestTime], [qualitativeTestExpiration], [employeeID], [respiratorID], [respiratorSize])
+values(@qualitativeTestType, @qualitativeTasteThreshold, @qualitativeTestPass, @qualitativeTestDate, @qualitativeTestTime, @qualitativeTestExpiration, @employeeID, @respiratorID, @respiratorSize)
 SELECT * FROM [dbo].[QualitativeRespiratorFitTest] WHERE qualitativeTestID = SCOPE_IDENTITY();
 
 CREATE PROCEDURE AddEmployee
