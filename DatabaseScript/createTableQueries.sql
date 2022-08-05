@@ -81,6 +81,29 @@ create table QuantitativeRespiratorFitTest(
 	quantitativeTest8FitFactor nvarchar(7),
 	quantitativeOverallFitFactor nvarchar(7),
 )
+
+create table VentilationSystem(
+	ventID int IDENTITY (600000,1) PRIMARY KEY,
+	manufacturer nvarchar(255),
+	model nvarchar(255),
+	serialNumber  nvarchar(255),
+	installDate date,
+	decommisionDate date,
+	companyID int,
+	technicianID int,
+	foreign key(companyID) References Company(companyID),
+	foreign key(technicianID) References Technician(technicianID),
+)
+
+create table Technician(
+	technicianID int IDENTITY (9000,1) PRIMARY KEY,
+	technicianFirstName nvarchar(255),
+	technicianMiddleName nvarchar(255),
+	technicianLastName nvarchar(255),
+	technicianTitle nvarchar(255)
+)
+
+
 alter table QuantitativeRespiratorFitTest
 add employeeID int
 foreign key(employeeID) references Employee(employeeID)
